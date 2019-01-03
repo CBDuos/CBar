@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#22426d</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name ="colorWhiteTransparent">#80FFFFFF</color>
+    <color name="scrollbar">#1a84ff</color>
+    <color name="green">#008000</color>
+    <color name="black">#000000</color>
+    <color name="theme">#005dca</color>
+    <color name="bg">#fefff1</color>
+    <color name="backgroundColor">#777</color>
+    <color name="album_title">#4c4c4c</color>
+</resources>

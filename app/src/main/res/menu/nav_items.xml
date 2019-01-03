@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_students"
+        android:icon="@drawable/ic_action_person"
+        android:title="Students"
+        />
+    <item
+        android:id="@+id/nav_messages"
+        android:icon="@drawable/ic_action_message"
+        android:title="Messages" />
+    <item
+        android:id="@+id/nav_help"
+        android:icon="@drawable/ic_action_help"
+        android:title="Help" />
+</menu>

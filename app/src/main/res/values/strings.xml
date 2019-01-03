@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">CollegeBar</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_registration">Registration</string>
+
+    <!--Login In string-->
+
+    <!--Sign Up string-->
+    <string name="username">Username</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="create">Next</string>
+    <string name="note1">Use your Username and Password to Log In into your Profile
+        (Don\'t share them with anyone)</string>
+    <string name="note2">Nick Name will appear in your Profile</string>
+    <string name="note3">Users can search your Profile by using your Nick Name</string>
+    <string name="policy">By signing up, you agree to the</string>
+    <string name="policy1"> <font color="#1a84ff"><u>Terms of service</u> </font> and <font color="#1a84ff"><u> Privacy Policy</u></font></string>
+
+    <string name="title_activity_user_interface">UserInterface</string>
+    <string name="nav_message">Messages</string>
+    <string name="nav_user">Students List</string>
+    <string name="title_activity_user_screen">CollegeBar</string>
+    <string name="title_activity_otp">OTP</string>
+    <string name="title_activity_phone_login">PhoneLogin</string>
+
+
+    <string name="reSend"><u>Re-Send</u></string>
+    <string name="title_activity_policy">Policy</string>
+    <string name="recover"><font color="#008000"><u>Recover Your Account</u></font></string>
+    <string name="title_activity_verify_number">VerifyNumber</string>
+    <string name="title_activity_recover_password">RecoverPassword</string>
+    <string name="title_activity_about_us">AboutUs</string>
+    <string name="title_activity_contact_us">ContactUs</string>
+    <string name="title_activity_share">Share</string>
+    <string name="title_activity_user_screenn">UserScreenn</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_account_setting">Account Settings</string>
+    <string name="title_activity_show_photo"> </string>
+    <string name="title_activity_edit_profile">EditProfile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

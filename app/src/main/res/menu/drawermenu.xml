@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:anroid="http://schemas.android.com/tools">
+    <item android:id="@+id/sound" android:title="Mute" app:actionLayout="@layout/layout_switch_sound"/>
+    <item android:id="@+id/theme" android:title="Theme"/>
+    <item android:id="@+id/nightMode" android:title="Night Mode"  app:actionLayout="@layout/layout_switch"/>
+    <item android:id="@+id/accoutSetting" android:title="Account Settings" android:icon="@drawable/ic_action_setting"/>
+    <item android:id="@+id/share" android:title="Share" android:icon="@drawable/ic_action_share"/>
+    <item android:id="@+id/logout" android:title="Log Out" android:icon="@drawable/ic_action_logout" android:color="?attr/colorControlHighlight" />
+</menu>

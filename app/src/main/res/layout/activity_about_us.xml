@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/backgroundcolor"
+    tools:context=".AboutUs">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        >
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="?attr/textcolor"
+            android:layout_marginBottom="10dp"
+            android:gravity="fill"
+            android:text="CollegeBar is a chat application designed exclusively to connect every student from your college. You can send and receive message with not only friends but also with all the other students studying in your college."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="?attr/textcolor"
+            android:layout_marginBottom="10dp"
+            android:text="• How are we different ?"/>
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:textColor="?attr/textcolor"
+            android:textSize="16dp"
+            android:text="Unlike the already existing foreign based social networking platforms which are unable to connect college students easily. We provide an easy way for students to communicate with each" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:textColor="?attr/textcolor"
+            android:text="other."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
+            android:textColor="?attr/textcolor"
+            android:text="So please share this app with your college friends."/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/textcolor"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Our Mission : "/>
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="16dp"
+            android:textColor="?attr/textcolor"
+            android:text="We want to provide the easiest way to help students to find new people from their campus and chat with them in the best way possible."
+            />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="?attr/textcolor"
+            android:text="Created By : Utpal, Jayant &amp; Akshay"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textColor="?attr/textcolor"
+            android:text="Designed By : Akshay Bisht"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

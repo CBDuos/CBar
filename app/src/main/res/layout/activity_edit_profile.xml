@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg"
+    tools:context=".EditProfile">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/box"
+        android:fontFamily="@font/arial"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="CollegeBar"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Your College :"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            />
+
+        <android.support.design.widget.FloatingActionButton
+            android:src="@drawable/ic_action_college"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="showDialogListView"
+            android:tint="@color/white"
+            app:elevation="0dp"
+            app:fabSize="mini"
+            app:maxImageSize="30dp"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textViewCollegName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="College Name"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date Of Birth :"
+        android:layout_centerInParent="true"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:src="@drawable/ic_action_birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="showDateOfBirth"
+        android:tint="@color/white"
+        app:elevation="0dp"
+        app:fabSize="mini"
+        app:maxImageSize="30dp"
+        android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DOB"
+        android:layout_gravity="center"
+        android:textSize="22sp"
+        />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:text="Sign Up"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_round"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+    />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/collegeimage"/>
+
+</LinearLayout>
