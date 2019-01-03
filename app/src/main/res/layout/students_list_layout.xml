@@ -35,7 +35,7 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/offline"
+                    android:background="@drawable/online"
                     android:layout_marginRight="5dp"
                     android:clickable="true"
                     android:scaleType="fitXY" />
