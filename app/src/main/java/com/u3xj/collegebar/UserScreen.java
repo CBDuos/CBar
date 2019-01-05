@@ -6,8 +6,10 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -34,7 +36,18 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserScreen extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -53,6 +66,7 @@ public class UserScreen extends AppCompatActivity implements NavigationView.OnNa
 
     MediaPlayer mp;
 
+    String userId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
@@ -68,6 +82,9 @@ public class UserScreen extends AppCompatActivity implements NavigationView.OnNa
             finish();
             startActivity(new Intent(this, MainActivity.class));
         }
+
+        userId =  Integer.toString(SharedPrefManager.getInstance(getApplication()).getUserID());
+
 
         mp = MediaPlayer.create(getApplication(), R.raw.clicksound);
 
@@ -244,9 +261,7 @@ public class UserScreen extends AppCompatActivity implements NavigationView.OnNa
             public void onClick(DialogInterface dialog, int which) {
                 if (SharedPrefManager.getInstance(getApplication()).getStoreSound().equals("0"))
                     mp.start();
-                SharedPrefManager.getInstance(getApplication()).logout();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                finish();
+                logOut();
             }
         });
         alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -260,5 +275,35 @@ public class UserScreen extends AppCompatActivity implements NavigationView.OnNa
 
 
         alert.create().show();
+    }
+
+    public void logOut()
+    {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Constant.URL_OFFLINE_STATUS,
+                    new Response.Listener<String>() {
+                        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+                        @Override
+                        public void onResponse(String response) {
+                            SharedPrefManager.getInstance(getApplication()).logout();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            finish();
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getApplication(), "Please Check Your Internet Connection",Toast.LENGTH_SHORT).show();
+                        }
+                    }){
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String,String> params = new HashMap<>();
+                    params.put("user_id",userId);
+                    return params;
+                }
+            };
+
+            RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+
     }
 }

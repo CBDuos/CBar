@@ -8,6 +8,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -18,6 +19,7 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -47,6 +49,8 @@ public class StudentsFragment extends Fragment {
 
     Bitmap profileName;
 
+    Boolean isScrolling = false;
+
     public StudentsFragment() {
         // Required empty public constructor
     }
@@ -70,7 +74,19 @@ public class StudentsFragment extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(mLayoutManager);
-        loadStudentList();
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+
+            }
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+            }
+        });
+        prepareAlbums();
         return  view;
     }
 
@@ -133,7 +149,7 @@ public class StudentsFragment extends Fragment {
 
                                 profileName = stringToImage(studentObject.getString("profile_name"));
                                 Students student1 = new Students(studentObject.getString("nick_name"),studentObject.getString("gender")
-                                        ,profileName);
+                                        ,profileName,studentObject.getString("status"),studentObject.getString("collegename"));
                                 studentsList.add(student1);
                             }
                             adapter = new StudentsAdapter(getActivity(),studentsList);
@@ -146,7 +162,7 @@ public class StudentsFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(), error.getMessage(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Please Check Your Internet Connection",Toast.LENGTH_SHORT).show();
                     }
                 }
         );
@@ -158,5 +174,57 @@ public class StudentsFragment extends Fragment {
         byte[] decodedString = Base64.decode(image, Base64.DEFAULT);
         Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
         return decodedByte;
+    }
+
+    private void prepareAlbums() {
+        Bitmap profileName = BitmapFactory.decodeResource(getResources(),
+                R.drawable.collegeimage);
+
+        Students a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+         a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+         a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+         a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+         a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+         a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+         a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+         a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+         a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+         a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+        a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+        a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+        a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+        a = new Students("Maroon5", "Male",profileName,"1","DSB, Campus");
+        studentsList.add(a);
+
+
+
+        adapter = new StudentsAdapter(getActivity(),studentsList);
+        recyclerView.setAdapter(adapter);
     }
 }

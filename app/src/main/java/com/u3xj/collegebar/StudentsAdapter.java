@@ -1,6 +1,8 @@
 package com.u3xj.collegebar;
 
 import android.content.Context;
+import android.content.Intent;
+import android.media.Image;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -21,13 +23,15 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.MyView
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, count;
-        public ImageView thumbnail;
+        public ImageView thumbnail, status, collegename;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
             count = (TextView) view.findViewById(R.id.count);
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+            status = (ImageView) view.findViewById(R.id.status);
+            collegename = (ImageView) view.findViewById(R.id.college);
         }
     }
 
@@ -47,10 +51,23 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.MyView
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        Students students = studentsList.get(position);
+        final Students students = studentsList.get(position);
         holder.title.setText(students.getName());
         holder.count.setText(students.getGender());
         holder.thumbnail.setImageBitmap(students.getThumbnail());
+
+        if (students.getStatus().equals("1")) {
+            holder.status.setImageResource(R.drawable.online);
+        } else{
+            holder.status.setImageResource(R.drawable.offline);
+        }
+
+        holder.collegename.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext.getApplicationContext(),students.getCollegename(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

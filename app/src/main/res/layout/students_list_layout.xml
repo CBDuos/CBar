@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="220dp">
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
         android:id="@+id/card_view"
@@ -35,27 +35,42 @@
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/online"
                     android:layout_marginRight="5dp"
                     android:clickable="true"
                     android:scaleType="fitXY" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/title"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/ll"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/album_title"
-                        android:textSize="@dimen/album_title" />
-                    <TextView
-                        android:id="@+id/count"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/songs_count" />
-                </LinearLayout>
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/album_title"
+                            android:textSize="@dimen/album_title" />
+                        <TextView
+                            android:id="@+id/count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/songs_count"
+                            />
+                    </LinearLayout>
+                    <ImageView
+                        android:id="@+id/college"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_alignRight="@+id/ll"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ripple_effect"
+                        android:clickable="true"
+                        android:src="@drawable/ic_action_college"
+                        />
+                </RelativeLayout>
 
             </LinearLayout>
         </LinearLayout>

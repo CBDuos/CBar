@@ -21,4 +21,6 @@ public class Constant
     public static final String URL_USERNAME_EXIST = ROOT_URL+"userNameExist.php";
     public static final String URL_CHANGE_PASSWORD = ROOT_URL+"updatePassword.php";
     public static final String URL_UPLOAD_IMAGE = ROOT_URL+"uploadProfile.php";
+    public static final String URL_OFFLINE_STATUS = ROOT_URL+"offlineStatus.php";
+
 }
